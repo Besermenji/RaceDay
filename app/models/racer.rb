@@ -21,7 +21,7 @@ class Racer
     self.mongo_client['racers']
   end
 
-  def self.all(prototype={}, sort={:number=>0}, skip=0, limit=nil)
+  def self.all(prototype={}, sort={:number=>1}, skip=0, limit=nil)
         result=collection.find(prototype).sort(sort).skip(skip)
     result=result.limit(limit) if !limit.nil?
     return result
